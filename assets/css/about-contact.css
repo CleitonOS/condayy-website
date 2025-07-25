@@ -1,0 +1,114 @@
+.about-contact{
+    background-color: var(--cor-branca-fundo);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: var(--cor-base-escura);
+}
+
+.about-contact__all{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 340px;
+}
+
+.logo__all{
+    display: flex;
+    align-self:flex-start;
+    align-items: center;
+    padding-top: 1%;
+    padding-right: 3%;
+}
+
+.about-contact__nav{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+
+    flex-direction: column;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.about-contact__items{
+    color: var(--cor-azulescuro-fundo);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px;
+    transition: 0.4s;
+}
+
+.about-contact__items:hover{
+    background-color: rgb(240, 240, 240);
+    background-clip: border-box;
+    border-radius: 20px;
+    padding: 5px;
+    transition: 0.4s;
+}
+
+.about-contact__inputs{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.about-contact__input{
+    position: relative;
+}
+
+.about-contact__title{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.button__submit{
+    font-family: var(--font-raleway);
+    color: var(--cor-branca-fundo);
+    background-color: var(--cor-azulescuro-fundo);
+    cursor: pointer;
+    margin-top: .4rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .about-contact__inputs{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .logo__all{
+        display: flex;
+        align-self: center;
+        padding-top: 1%;
+        padding-right: 3%;
+        padding-bottom: 8%;
+    }
+
+    .about-contact__all{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .about-contact__nav{
+        padding-bottom: 6%;
+        align-items: center;
+    }
+
+    .about-contact__items:not(:last-child){
+        margin-bottom: 16%;
+    }
+
+    .about-contact__items{
+        margin-bottom: 16%;
+    }
+
+    .about-contact__inputs{
+        width: 85vw;
+    }
+}

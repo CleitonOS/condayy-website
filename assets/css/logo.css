@@ -1,0 +1,20 @@
+.logo__name{
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: (var(--font-montserrat));color: var(--cor-da-marca);
+}
+
+.logo__name span{
+    font-size: 0.8rem;
+    color: #f9f9f9;
+}
+
+.logo{
+    padding: 0 .3rem;
+}
+
+.logo__link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}

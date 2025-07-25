@@ -1,0 +1,279 @@
+/* Parte de Section de SKILLS */
+
+.skills-hobbies_section {
+    background-color: var(--cor-base-claro);
+    padding-bottom: 5.5rem;
+}
+
+.skills__title{
+    font-size: 2rem;
+    font-weight: 700;
+
+    text-align: center;
+
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+
+    color: var(--preto-texto);
+}
+
+.group-items__skills{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+.items__skills{
+    display: flex;
+    align-items: end;
+    box-sizing: border-box;
+    
+    padding: 10px;
+
+    width: 14.6%;
+    height: 154px;
+    
+    margin: 1%;
+
+    background-color: var(--cor-branca-caixa);
+
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--preto-texto);
+
+    background-repeat: no-repeat;
+    background-size: 2rem;
+
+    transition: 0.5s;
+}
+
+/* Parte de Section de HOBBIES */
+
+.hobbies__title{
+    font-size: 2rem;
+    font-weight: 700;
+
+    text-align: center;
+
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+
+    color: var(--preto-texto);
+}
+
+.group-items__hobbies{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.items__hobbies{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    box-sizing: border-box;
+    
+    padding: 10px;
+
+    width: 14.6%;
+    height: 154px;
+    
+    margin: 1%;
+
+    background-color: var(--cor-branca-caixa);
+
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--preto-texto);
+
+    background-repeat: no-repeat;
+    background-size: 2rem;
+
+    transition: 0.5s;
+}
+
+/* Imagens da parte de Skills */
+
+.items__skills--html{
+    background-image: url('../imgs/logos_skills/html.svg');
+    background-position: 0.8rem 4.8rem;
+}
+
+.items__skills--css{
+    background-image: url('../imgs/logos_skills/css.svg');
+    background-position: 0.6rem 4.3rem;
+}
+
+.items__skills--javascript{
+    background-image: url('../imgs/logos_skills/js.svg');
+    background-position: 0.8rem 5rem;
+}
+
+.items__skills--react{
+    background-image: url('../imgs/logos_skills/react.svg');
+    background-position: 0.8rem 5rem;
+}
+
+.items__skills--align{
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+}
+
+.fa-aws{
+    color: #2a7ae4;
+    padding-bottom: 0.8rem;
+}
+
+.fa-database{
+    color: #2a7ae4;
+    padding-bottom: 0.8rem;
+    padding-left: 0.1rem;
+}
+
+.fa-git-alt{
+    color: var(--cor-azul-icones-botoes);
+    padding-bottom: 0.8rem;
+    padding-left: 0.1rem;
+}
+
+.fa-python{
+    color: var(--cor-azul-icones-botoes);
+    padding-bottom: 0.8rem;
+    padding-left: 0.1rem;
+}
+
+
+/* Imagens da parte de HOBBIES */
+
+.fa-person-biking{
+    color: #2A7AE4;
+    padding-bottom: 0.8rem;
+    padding-left: 0.1rem;
+}
+
+.fa-headphones{
+    color: var(--cor-azul-icones-botoes);
+    padding-bottom: 0.8rem;
+    padding-left: 0.1rem;
+}
+
+.fa-gamepad{
+    color: var(--cor-azul-icones-botoes);
+    padding-bottom: 0.8rem;
+    padding-left: 0.1rem;
+}
+
+.fa-dumbbell{
+    color: var(--cor-azul-icones-botoes);
+    padding-bottom: 0.8rem;
+    padding-left: 0.1rem;
+}
+
+.fa-futbol{
+    color: var(--cor-azul-icones-botoes);
+    padding-bottom: 0.8rem;
+    padding-left: 0.1rem;
+}
+
+.fa-leaf{
+    color: var(--cor-azul-icones-botoes);
+    padding-bottom: 0.8rem;
+    padding-left: 0.1rem;
+}
+
+.fa-shuttle-space{
+    color: var(--cor-azul-icones-botoes);
+    padding-bottom: 0.8rem;
+    padding-left: 0.1rem;
+}
+
+/* Estilização utilizando Hover da parte de HOBBIES */
+
+.items__hobbies:hover
+{
+    transform: scale(1.1);
+    background-color: var(--cor-azul-icones-botoes);
+    color: var(--cor-branca-caixa);
+    transition: 0.5s;
+}
+
+.items__hobbies:hover > i{
+    color: var(--cor-branca-caixa);
+}
+
+/* Estilização utilizando Hover da parte de SKILLS */
+
+.items__skills:hover
+{
+    transform: scale(1.1);
+    background-color: var(--cor-azul-icones-botoes);
+    color: var(--cor-branca-caixa);
+    transition: 0.5s;
+}
+
+.items__skills:hover > i{
+    color: var(--cor-branca-caixa);
+}
+
+.items__skills--html:hover{
+    background-image: url('../imgs/logos_skills/logos_branca/html-white.svg');
+}
+
+.items__skills--css:hover{
+    background-image: url('../imgs/logos_skills/logos_branca/css-white.svg');
+}
+
+.items__skills--javascript:hover{
+    background-image: url('../imgs/logos_skills/logos_branca/js-white.svg');
+}
+
+.items__skills--react:hover{
+    background-image: url('../imgs/logos_skills/logos_branca/react-white.svg');
+}
+
+@media screen and (max-width: 1023px){
+    .skills__title{
+        font-size: 1.6rem;
+    }
+
+    .hobbies__title{
+        font-size: 1.6rem;
+    }
+
+    .items__skills{
+        width: 31.3%;
+        margin-bottom: 1.2rem;
+    }
+
+    .hobbies__title{
+        padding-top: 3.5rem;
+    }
+
+    .items__hobbies{
+        width: 31.3%;
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 680px){
+    .items__skills{
+        width: 46%;        
+        margin-bottom: 1.2rem;
+    }
+
+    .items__hobbies{
+        width: 46%;
+        margin-bottom: 1.2rem;
+    }
+    .items__hobbies:nth-child(2n){
+        margin-left: 5%;
+    }
+
+    .items__skills:nth-child(2n){
+        margin-left: 5%;
+    }
+}
+

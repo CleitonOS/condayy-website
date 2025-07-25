@@ -1,0 +1,165 @@
+.section__initial{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+
+    background-color: var(--cor-base-claro);
+    /* background-image: url('../imgs/photos-pack-condayy.png');
+    background-size: cover; */
+}
+
+.title__initial{
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.5rem;
+
+    padding: 1rem 0 2rem 0;
+
+    color:#000;
+}
+
+.destaque__name{
+    color: var(--cor-da-marca);
+}
+
+.text__initial{
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 120%;
+
+    padding: 1rem 0 0 0;
+
+    color: var(--preto-texto);
+}
+
+.social__links {
+    display: flex;
+    padding: 2rem 0 1rem 0;
+}
+
+.links__initial{
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    color: var(--preto-texto);
+    padding: 5px;
+    transition: 0.4s all;
+}
+
+.links__initial::after{
+    position: relative;
+    top: 6px;
+    content: url('../imgs/arrow_back_black_24dp1.svg');
+}
+
+.links__initial:hover{
+    background-color: rgb(230, 230, 230);
+    background-clip: border-box;
+    border-radius: 20px;
+    padding: 5px;
+    transition: 0.4s all;
+}
+
+.div__initialText {
+    padding-right: 2rem;
+}
+
+.imgPerfil_initial{
+    width: 300px;
+    height: 300px;
+    border: 1px solid var(--preto-texto);
+    border-radius: 50%;
+
+    background-image: url('../imgs/imagem-de-perfil.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+@media screen and (max-width: 1439px){
+    .section__initial{
+        align-items: flex-start;
+    }
+    
+    .imgPerfil_initial{
+        margin-top: 2%;
+    }
+}
+
+@media screen and (max-width: 1023px){
+    .title__initial{
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        padding-bottom: 1rem;
+    }
+
+    .text__initial{
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+
+    .imgPerfil_initial{
+        width: 150px;
+        height: 150px;
+    }
+
+    .social__links{
+        padding-top: 1.4rem;
+    }
+
+    .links__initial{
+        font-size: 0.9rem;
+        margin-right: 1rem;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 710px){
+    .div__initialText {
+        padding-right: 0rem;
+        max-width: 100%;
+    }
+
+     .section__initial{
+    flex-direction: column;
+    align-items: flex-start;
+    }
+
+    .div-perfil-img{
+        order: -1;
+    }
+
+    .social__links{
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .links__initial{
+        font-size: 0.82rem;
+        margin-left: 0px;
+        margin-right: 8px;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .links__initial::after{
+        display: none;
+    }
+
+    .social__links{
+        padding-bottom: 0px;
+    }
+
+    .links__initial{
+        font-size: 0.9rem;
+        margin-right: 14px;
+    }
+}

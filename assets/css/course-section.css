@@ -1,0 +1,142 @@
+.course__section{
+    background-color: var(--cor-base-escura);
+    padding-bottom: 4rem;
+}
+
+.title__course{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    
+    color: var(--preto-texto);
+}
+
+.group__courses{
+    display: flex;
+    justify-content: center;
+}
+
+.items__courses{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+    
+    padding: 1% 1% 1% 1%;
+
+    width: 25%;
+
+}
+
+.img-espro{
+    height: 40%;
+}
+
+.img-alura-one{
+    transform: scale(1.4);
+}
+
+.img-aws{
+    transform: scale(1.6);
+}
+
+.img-badge{
+    transform: scale(1.6);
+}
+
+.images{
+    max-width: 260px;
+    max-height: 100px;
+}
+
+.box__courses{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 240px;
+
+    padding: 1rem;
+
+    background-color: var(--cor-branca-caixa);
+}
+
+.course__name{
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.8rem 0 0.8rem 0;
+
+    color: var(--preto-texto);
+}
+
+.course__info{
+    font-size: 1rem;
+    font-weight: 500;
+    font-variant-numeric: lining-nums;
+
+    color: var(--preto-texto);
+}
+
+.course__link{
+    text-decoration: none;
+}
+
+.course__name:hover:not(.graduation){
+    color: #2A7AE4;
+}
+
+@media screen and (max-width: 1200px){
+    .title__course{
+        font-size: 1.6rem;
+    }
+
+    .box__courses{
+        width: 100%;
+        height: 150px;
+    }
+
+    .img-alura-one{
+        transform: scale(1);
+    }
+
+    .img-badge{
+        transform: scale(1.0);
+    }
+
+    .images{
+        max-width: 120px;
+        max-height: 120px;
+    }
+
+    .course__name{
+        font-size: 1rem;
+    }
+
+    .course__info{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .group__courses{
+        flex-direction: column;
+    }
+    
+    .items__courses{
+        width: 100%;
+        margin-bottom: 1.2rem;
+    }
+
+    .course__name{
+        padding-bottom: 0.2rem;
+    }
+}
+
+
+

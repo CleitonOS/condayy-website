@@ -1,0 +1,140 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding-top: 2.5rem;
+    height: 5rem;
+
+    background-color: var(--cor-base-claro);
+}
+
+.title__header{
+    font-family: var(--font-montserrat);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--cor-da-marca);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.title__header::before {
+    content: "";
+    position: absolute;
+    left: -0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: linear-gradient(180deg, var(--cor-da-marca), #FF6100);
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+.title__header:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    color: #FF6100;
+}
+
+.title__header:hover::before {
+    opacity: 1;
+}
+
+.nav__header{
+    text-align: center;
+}
+
+.nav__header ul{
+    display: flex;
+}
+
+.links__header{
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-right: .2rem;
+    margin-left: .2rem;
+    text-decoration: none;
+    padding: 20px 10px 5px 10px;
+    color: var(--preto-texto);
+    position: relative;
+    transition: color 0.3s cubic-bezier(.4,0,.2,1);
+    /* Removido background-color e border-radius do hover para um efeito mais moderno */
+}
+
+.links__header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 2px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cor-da-marca), #FF6100);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+}
+
+.links__header:hover,
+.links__header:focus {
+    color: var(--cor-da-marca);
+}
+
+.links__header:hover::after,
+.links__header:focus::after {
+    transform: scaleX(1);
+}
+
+/* text-decoration: underline 2px;
+text-underline-offset: 4px; */
+
+/* animação de piscar o underline no título - FEATURE DESCONTINUADA */
+@keyframes underline_pisca {
+     0% { opacity: 0; }
+     50% { opacity: 0.5; }
+     100% { opacity: 1; }
+}
+
+@media screen and (min-width: 769px) {
+    #id-link-contato span{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1023px){
+    
+    .links__header:not(#id-link-contato){
+        display: none;
+    }
+    #id-link-contato{
+        font-weight: bold;
+        margin-top: 3px;
+    }
+
+    #id-link-contato span{
+        padding-right: 2px;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .header{
+        padding: 1rem 1.5rem;
+        height: 3rem;
+    }
+
+    .title__header{
+        font-size: 1rem;
+    }
+
+    #id-link-contato{
+        font-size: 1rem;
+        padding-top: 6px;
+    }
+}
