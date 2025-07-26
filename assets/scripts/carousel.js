@@ -35,18 +35,55 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Funções básicas do carousel
   function updateCarousel() {
-    const itemWidth = items[0].offsetWidth + 20;
-    const visibleItems = Math.floor(track.offsetWidth / itemWidth);
+    const itemWidth = items[0].offsetWidth + 20; // 20px é o gap
+    const trackWidth = track.offsetWidth;
+    const totalItemsWidth = items.length * itemWidth;
+    
+    // Calcula quantos itens são visíveis na tela
+    const visibleItems = Math.floor(trackWidth / itemWidth);
+    
+    // Calcula o índice máximo permitido
     const maxIndex = Math.max(0, items.length - visibleItems);
-    currentIndex = Math.min(currentIndex, maxIndex);
-    const offset = itemWidth * currentIndex;
+    
+    // Garante que currentIndex esteja dentro dos limites
+    currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+    
+    // Calcula o offset máximo para evitar espaço em branco
+    const maxOffset = Math.max(0, totalItemsWidth - trackWidth);
+    const offset = Math.min(itemWidth * currentIndex, maxOffset);
+    
     track.style.transform = `translateX(-${offset}px)`;
+    
+    // Atualiza estado dos botões
+    updateButtonStates();
+  }
+  
+  function updateButtonStates() {
+    const itemWidth = items[0].offsetWidth + 20;
+    const trackWidth = track.offsetWidth;
+    const visibleItems = Math.floor(trackWidth / itemWidth);
+    const maxIndex = Math.max(0, items.length - visibleItems);
+    
+    // Desabilita botão anterior se estiver no início
+    if (prevBtn) {
+      prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+      prevBtn.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+    }
+    
+    // Desabilita botão próximo se estiver no final
+    if (nextBtn) {
+      nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+      nextBtn.style.cursor = currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
+    }
   }
   
   function nextSlide() {
     console.log('Próximo slide');
-    const visibleItems = Math.floor(track.offsetWidth / (items[0].offsetWidth + 20));
+    const itemWidth = items[0].offsetWidth + 20;
+    const trackWidth = track.offsetWidth;
+    const visibleItems = Math.floor(trackWidth / itemWidth);
     const maxIndex = Math.max(0, items.length - visibleItems);
+    
     if (currentIndex < maxIndex) {
       currentIndex++;
       updateCarousel();
@@ -65,13 +102,22 @@ document.addEventListener('DOMContentLoaded', function() {
   prevBtn.addEventListener('click', function(e) {
     e.preventDefault();
     console.log('Botão anterior clicado');
-    prevSlide();
+    if (currentIndex > 0) {
+      prevSlide();
+    }
   });
   
   nextBtn.addEventListener('click', function(e) {
     e.preventDefault();
     console.log('Botão próximo clicado');
-    nextSlide();
+    const itemWidth = items[0].offsetWidth + 20;
+    const trackWidth = track.offsetWidth;
+    const visibleItems = Math.floor(trackWidth / itemWidth);
+    const maxIndex = Math.max(0, items.length - visibleItems);
+    
+    if (currentIndex < maxIndex) {
+      nextSlide();
+    }
   });
   
   // Modal functions
@@ -181,9 +227,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const threshold = 50;
     if (Math.abs(diffX) > threshold) {
       if (diffX > 0) {
-        prevSlide();
+        // Movimento para direita - slide anterior
+        if (currentIndex > 0) {
+          prevSlide();
+        } else {
+          updateCarousel(); // Volta para posição inicial
+        }
       } else {
-        nextSlide();
+        // Movimento para esquerda - próximo slide
+        const itemWidth = items[0].offsetWidth + 20;
+        const trackWidth = track.offsetWidth;
+        const visibleItems = Math.floor(trackWidth / itemWidth);
+        const maxIndex = Math.max(0, items.length - visibleItems);
+        
+        if (currentIndex < maxIndex) {
+          nextSlide();
+        } else {
+          updateCarousel(); // Volta para posição final
+        }
       }
     } else {
       updateCarousel();
