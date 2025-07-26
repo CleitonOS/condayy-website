@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/about-contact.css">
     <link rel="stylesheet" href="assets/css/logo.css">
+    <link rel="stylesheet" href="assets/css/carousel-section.css">
 </head>
 <body>
     <a name="home"></a>
@@ -69,22 +70,32 @@
                 Agora, com uma presença consolidada e um crescimento acelerado, levamos nosso conhecimento e nossos produtos de alta performance para empreendedores e empresas de todo o Brasil que, como nós, acreditam no poder da publicidade digital bem-feita.
             </p>
         </section>
-
-        <section class="skills-hobbies_section container">
-            <!-- seta que leva ao topo da página -->
-            <a href="#home" class="arrow-link"><i class="fa-solid fa-circle-arrow-up fa-3x" style="color: #2a7ae4;"></i></a>
-
-            <a name="skills-section"></a>
-            <h2 class="skills__title">Skills</h2>
-            <ul class="group-items__skills">
-                <li class="items__skills items__skills--javascript">JavaScript</li>
-                <li class="items__skills items__skills--react">React</li>
-                <li class="items__skills items__skills--align"><i class="fa-brands fa-git-alt fa-2x"></i>Git</li>
-                <li class="items__skills items__skills--align"><i class="fa-brands fa-python fa-2x"></i>Python</li>
-                <li class="items__skills items__skills--align"><i class="fa-solid fa-database fa-2x"></i>MySQL</li>
-                <li class="items__skills items__skills--align"><i class="fa-brands fa-aws fa-2x""></i>AWS Cloud</li>
-            </ul>
-            
+        
+        <section class="carousel-modern container">
+          <h2 class="carousel-title">Confira nossos painéis de LED</h2>
+          <div class="carousel-wrapper">
+            <button class="nav-btn prev">&#10094;</button>
+        
+            <div class="carousel-track container">
+              <div class="carousel-item">
+                <img src="./assets/imgs/imgs-paineis/IMG_2027.webp" alt="Painel1" />
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/imgs/imgs-paineis/IMG_3966.webp" alt="Painel 2" />
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/imgs/imgs-paineis/IMG_3970.webp" alt="Painel 3" />
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/imgs/imgs-paineis/IMG_4220.webp" alt="Painel 4" />
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/imgs/imgs-paineis/IMG_4220.webp" alt="Painel 5" />
+              </div>
+            </div>
+        
+            <button class="nav-btn next">&#10095;</button>
+          </div>
         </section>
 
         <section class="course__section container">
@@ -304,5 +315,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="./assets/scripts/validacao.js"></script>
     <script src="./assets/scripts/scroll-top.js"></script>
+    <script src="./assets/scripts/carousel.js"></script>
 </body>
 </html>

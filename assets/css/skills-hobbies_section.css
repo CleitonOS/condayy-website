@@ -6,15 +6,34 @@
 }
 
 .skills__title{
-    font-size: 2rem;
-    font-weight: 700;
-
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     text-align: center;
-
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    
     color: var(--preto-texto);
+    background: linear-gradient(135deg, var(--cor-da-marca) 0%, #FF6100 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.skills__title::after {
+    content: '';
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cor-da-marca), #FF6100);
+    border-radius: 2px;
 }
 
 .group-items__skills{

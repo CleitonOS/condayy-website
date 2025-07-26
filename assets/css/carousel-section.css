@@ -1,0 +1,176 @@
+.carousel-modern {
+    position: relative;
+    overflow: visible; /* Permite que os botões sejam visíveis fora do container */
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .carousel-title{
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    
+    color: var(--preto-texto);
+    background: linear-gradient(135deg, var(--cor-da-marca) 0%, #FF6100 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.carousel-title::after {
+    content: '';
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cor-da-marca), #FF6100);
+    border-radius: 2px;
+}
+  
+.carousel-wrapper {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 80px; /* Adiciona espaçamento lateral para os botões */
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    padding: 2rem 0rem 4rem 0rem;
+    transition: transform 0.4s ease;
+    min-width: 100%; /* ← Adicionado */
+    user-select: none; /* Previne seleção de texto durante o drag */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  .carousel-item {
+    flex: 0 0 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background: white;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, var(--cor-da-marca) 0%, #FF6100 100%);
+    border: none;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(255, 97, 0, 0.3);
+    z-index: 10;
+    transition: all 0.3s ease;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .nav-btn:hover {
+    background: linear-gradient(135deg, #FF6100 0%, var(--cor-da-marca) 100%);
+    box-shadow: 0 12px 35px rgba(255, 97, 0, 0.4);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .nav-btn:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+  
+  .nav-btn:focus {
+    outline: none;
+    box-shadow: 0 8px 25px rgba(255, 97, 0, 0.3), 0 0 0 3px rgba(255, 97, 0, 0.2);
+  }
+  
+  .nav-btn.prev { 
+    left: 20px; /* Posiciona nas laterais do wrapper */
+  }
+  .nav-btn.next { 
+    right: 20px; /* Posiciona nas laterais do wrapper */
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-wrapper {
+      overflow-x: hidden;
+      padding: 0 60px; /* Reduz o espaçamento para mobile */
+    }
+  
+    .carousel-title{
+        font-size: 2rem;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 16px;
+        padding: 1rem 0rem 4rem 0rem;      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .carousel-item {
+      flex: 0 0 calc(100% - 32px); /* espaço menor que 100% para dar espaçamento entre cards */
+      scroll-snap-align: center;
+      margin: 0 auto; /* centraliza cada slide */
+      max-width: 100%;
+    }
+  
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+  
+    .nav-btn {
+      top: 45%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 20px rgba(255, 97, 0, 0.3);
+    }
+    
+    .nav-btn:hover {
+      box-shadow: 0 8px 25px rgba(255, 97, 0, 0.4);
+      transform: translateY(-45%) scale(1.05);
+    }
+    
+    .nav-btn:active {
+      transform: translateY(-45%) scale(0.95);
+    }
+    
+    .nav-btn.prev { 
+      left: 10px; /* Ajuste para mobile */
+    }
+    .nav-btn.next { 
+      right: 10px; /* Ajuste para mobile */
+    }
+  }
