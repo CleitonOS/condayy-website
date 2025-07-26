@@ -138,15 +138,35 @@ document.addEventListener('DOMContentLoaded', function() {
   // Touch events para mobile
   track.addEventListener('touchstart', function(e) {
     startX = e.touches[0].clientX;
+    const startY = e.touches[0].clientY;
     isDragging = true;
     track.style.transition = 'none';
+    
+    // Armazena a posição inicial do Y para detectar movimento vertical
+    track.startY = startY;
   });
   
   track.addEventListener('touchmove', function(e) {
     if (!isDragging) return;
-    e.preventDefault();
+    
     currentX = e.touches[0].clientX;
+    const currentY = e.touches[0].clientY;
     const diffX = currentX - startX;
+    const diffY = currentY - track.startY;
+    
+    // Se o movimento for mais vertical que horizontal, permite o scroll da página
+    if (Math.abs(diffY) > Math.abs(diffX)) {
+      isDragging = false;
+      track.style.transition = 'transform 0.4s ease';
+      updateCarousel();
+      return;
+    }
+    
+    // Só previne o comportamento padrão se o movimento for horizontal
+    if (Math.abs(diffX) > 10) {
+      e.preventDefault();
+    }
+    
     const itemWidth = items[0].offsetWidth + 20;
     const currentOffset = itemWidth * currentIndex;
     const newOffset = currentOffset - diffX;

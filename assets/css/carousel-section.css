@@ -62,7 +62,7 @@
   
   .carousel-item {
     flex: 0 0 80%;
-    max-width: 400px; /* Aumentado de 300px para 400px, mas ainda limitado */
+    max-width: 320px; /* Reduzido de 400px para 320px */
     margin: 0 auto;
     border-radius: 16px;
     overflow: hidden;
@@ -230,6 +230,7 @@
     .carousel-wrapper {
       overflow-x: hidden;
       padding: 0 60px; /* Reduz o espaçamento para mobile */
+      touch-action: pan-y; /* Permite scroll vertical, mas controla o horizontal */
     }
   
     .carousel-title{
@@ -242,6 +243,7 @@
       padding: 1rem 0rem 4rem 0rem;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
+      touch-action: pan-y; /* Permite scroll vertical, mas controla o horizontal */
     }
   
     .carousel-item {
