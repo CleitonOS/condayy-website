@@ -114,7 +114,9 @@ text-underline-offset: 4px; */
     }
     #id-link-contato{
         font-weight: bold;
-        margin-top: 3px;
+        margin-top: 1rem;
+        color: var(--cor-da-marca);
+        text-decoration: underline;
     }
 
     #id-link-contato span{
@@ -129,7 +131,7 @@ text-underline-offset: 4px; */
     }
 
     .title__header{
-        font-size: 1rem;
+        font-size: 1.8rem;
     }
 
     #id-link-contato{
