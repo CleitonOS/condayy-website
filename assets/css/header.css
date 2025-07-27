@@ -112,6 +112,8 @@ text-underline-offset: 4px; */
     .links__header:not(#id-link-contato){
         display: none;
     }
+
+    /* REMOVER - ANTIGO LINK PARA CONTATO MOBILE */
     #id-link-contato{
         font-weight: bold;
         margin-top: 1rem;

@@ -140,6 +140,10 @@
 }
 
 @media screen and (max-width: 1023px){
+    .about__section{
+        padding-bottom: 4rem;
+    }
+
     .about__content {
         flex-direction: column;
         gap: 2rem;
@@ -173,6 +177,7 @@
     }
     
     .about__image {
+        margin-top: 1.5rem;
         height: 350px;
     }
     
@@ -199,7 +204,6 @@
     }
     
     .about__image {
-        margin-top: 1rem;
         height: 400px;
         border-radius: 8px;
     }
@@ -208,7 +212,7 @@
         font-size: 2rem;
         letter-spacing: 0.5px;
         padding: 1rem 0 1rem 0;
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
     }
     
     .about__title::before {

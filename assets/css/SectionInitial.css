@@ -35,6 +35,31 @@
     color: var(--preto-texto);
 }
 
+.contact-link {
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--cor-da-marca);
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    border: 2px solid var(--cor-da-marca);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.contact-link:hover {
+    background-color: var(--cor-da-marca);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-link:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .social__links {
     display: flex;
     padding: 2rem 0 1rem 0;
@@ -94,6 +119,10 @@
 }
 
 @media screen and (max-width: 1023px){
+    .section__initial{
+        padding-bottom: 4rem;
+        }
+
     .title__initial{
         font-size: 1.4rem;
         line-height: 1.4rem;
@@ -103,6 +132,12 @@
     .text__initial{
         font-size: 1rem;
         line-height: 1.4rem;
+    }
+
+    .contact-link {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+        margin-top: 0.8rem;
     }
 
     .imgPerfil_initial{
@@ -128,10 +163,18 @@
     }
 
      .section__initial{
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 1.5rem;
-    padding-bottom: 5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 1.5rem;
+    }
+
+    .contact-link {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        margin-top: 0.6rem;
+        text-align: center;
+        display: block;
+        width: fit-content;
     }
 
     .div-perfil-img{
@@ -152,6 +195,12 @@
 }
 
 @media screen and (max-width: 410px) {
+    .contact-link {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        margin-top: 0.5rem;
+    }
+
     .links__initial::after{
         display: none;
     }

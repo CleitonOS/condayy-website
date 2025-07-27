@@ -1,6 +1,7 @@
 .carousel-modern {
     position: relative;
     overflow: visible; /* Permite que os botões sejam visíveis fora do container */
+    padding-bottom: 3rem;
 }
 
 .carousel-container {
@@ -39,6 +40,18 @@
     height: 4px;
     background: linear-gradient(90deg, var(--cor-da-marca), #FF6100);
     border-radius: 2px;
+}
+
+.carousel-description {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--preto-texto);
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    padding: 0 1rem;
+    font-family: var(--font-inter);
 }
   
 .carousel-wrapper {
@@ -233,6 +246,10 @@
   }
   
   @media (max-width: 768px) {
+    .carousel-modern {
+        padding-bottom: 0rem;
+    }
+
     .carousel-wrapper {
       overflow-x: hidden;
       padding: 0 60px; /* Reduz o espaçamento para mobile */
@@ -241,6 +258,14 @@
   
     .carousel-title{
         font-size: 2rem;
+    }
+
+    .carousel-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 100%;
+        margin: 0 auto 1.5rem auto;
+        padding: 0 0.5rem;
     }
 
     .carousel-track {
@@ -256,7 +281,6 @@
       flex: 0 0 calc(100% - 32px); /* espaço menor que 100% para dar espaçamento entre cards */
       scroll-snap-align: center;
       margin: 0 auto; /* centraliza cada slide */
-      max-width: 100%;
       cursor: pointer; /* Indica que é clicável */
       transition: transform 0.3s ease;
     }
