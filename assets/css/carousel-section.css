@@ -244,6 +244,89 @@
   .modal-next {
     right: 20px;
   }
+
+  /* Estilos para a seção de informações dos painéis */
+  .carousel-info {
+    margin-top: 1.5rem;
+    padding: 0 1rem 4rem 1rem;
+  }
+
+  .info-section {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .info-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--preto-texto);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--cor-da-marca) 0%, #FF6100 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .info-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--preto-texto);
+    max-width: 900px;
+    margin: 0 auto 1.5rem auto;
+    font-weight: 400;
+  }
+
+  .features-section {
+    background: linear-gradient(135deg, rgba(255, 97, 0, 0.05) 0%, rgba(255, 97, 0, 0.1) 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 0 auto;
+    max-width: 800px;
+    border: 1px solid rgba(255, 97, 0, 0.1);
+  }
+
+  .features-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--preto-texto);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+  }
+
+  .features-list li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--preto-texto);
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+  }
+
+  .features-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--cor-da-marca);
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .features-note {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--preto-texto);
+    text-align: center;
+    font-style: italic;
+    opacity: 0.8;
+  }
   
   @media (max-width: 768px) {
     .carousel-modern {
@@ -345,5 +428,42 @@
     
     .modal-next {
       right: 10px;
+    }
+
+    /* Estilos responsivos para a seção de informações */
+    .carousel-info {
+      margin-top: 0rem;
+      padding: 0 0.5rem 4rem 0.5rem;
+    }
+
+    .info-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 auto 1rem auto;
+    }
+
+    .features-section {
+      padding: 1.5rem;
+      margin: 0 auto;
+    }
+
+    .features-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .features-list li {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+    }
+
+    .features-note {
+      font-size: 0.9rem;
     }
   }
