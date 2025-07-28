@@ -48,11 +48,12 @@
 }
 
 .about__title{
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     line-height: 1.1;
+    text-align: center;
 
     color: var(--cor2-texto);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -68,7 +69,8 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 60px;
     height: 4px;
     background: linear-gradient(90deg, #FF6100, #FF8A33);
