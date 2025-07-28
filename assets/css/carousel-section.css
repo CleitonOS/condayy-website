@@ -220,15 +220,15 @@
   }
   
   .modal-close {
-    position: absolute;
-    top: -120px; /* Movido para cima */
-    right: 10px; /* Movido para a direita */
+    position: fixed;
+    top: 20px;
+    right: 20px;
     background: var(--cor-da-marca);
     border: none;
     color: white;
     font-size: 2rem;
-    width: 45px; /* Aumentado de 40px para 45px */
-    height: 45px; /* Aumentado de 40px para 45px */
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -236,6 +236,7 @@
     justify-content: center;
     transition: all 0.3s ease;
     z-index: 1001; /* Garante que fique acima de tudo */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra para melhor visibilidade */
   }
   
   .modal-close:hover {
@@ -438,11 +439,12 @@
     }
     
     .modal-close {
-      top: -20px; /* Ajustado para mobile */
-      right: 5px; /* Ajustado para mobile */
-      width: 40px; /* Aumentado de 35px para 40px */
-      height: 40px; /* Aumentado de 35px para 40px */
+      top: 15px; /* Posicionado no canto superior direito da tela no mobile */
+      right: 15px; /* Canto superior direito no mobile */
+      width: 40px;
+      height: 40px;
       font-size: 1.5rem;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Sombra para mobile */
     }
     
     .modal-nav {
