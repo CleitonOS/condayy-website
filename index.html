@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="assets/css/profissional-section.css">
     <link rel="stylesheet" href="assets/css/contact-section.css">
     <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="assets/css/about-contact.css">
     <link rel="stylesheet" href="assets/css/logo.css">
     <link rel="stylesheet" href="assets/css/carousel-section.css">
     <link rel="stylesheet" href="assets/css/clients-section.css">
@@ -401,42 +400,57 @@
             </ul>
         </section>
 
-        <section class="about-contact container" id="contact-section">
-            <div class="about-contact__all">
-                <div class="logo__all">
-                    <h3 class="logo__name">Condayy. <span>publicidade</span></h3>
+        <section class="contact-section container" id="contact-section">
+            <div class="contact-section__content">
+                <div class="contact-section__header">
+                    <h3 class="contact-section__logo">Condayy. <span>publicidade</span></h3>
+                    <p class="contact-section__subtitle">Entre em contato conosco</p>
                 </div>
                 
-                <nav class="about-contact__nav">
-                    <a class="about-contact__items" href="#">Quem somos nós</a>
-                    <a class="about-contact__items" href="#">Política de privacidade</a>
-                    <a class="about-contact__items" href="#">Programa de fidelidade</a>
-                    <a class="about-contact__items" href="#">Nossas lojas</a>
-                    <a class="about-contact__items" href="#">Quero ser franqueado</a>
-                    <a class="about-contact__items" href="#">Anuncie aqui</a>
-                </nav>
-                
-                <form data-form>
-                    <fieldset>
-                        <div class="about-contact__inputs">
-                            <legend class="about-contact__title">Fale conosco</legend>
-                        
-                            <div class="about-contact__input">
-                                <input class="default__input" name="default__input" type="name" autocomplete="off" maxlength="40" data-name required>
-                                <label class="label__input label__name" for="default__input">Nome</label>
-                                <span class="input__name"></span>
-                            </div>
-    
-                            <div class="about-contact__input">
-                                <textarea class="textarea__input" name="textarea__input" id="" rows="3" autocomplete="off" maxlength="120" data-message required></textarea>
-                                <label class="label__input label__message" for="textarea__input">Escreva sua mensagem</label>
-                                <span class="input__message"></span>
-                            </div>
-
-                            <input type="submit" class="button__submit button__dark button" value="Enviar mensagem">
+                <div class="contact-section__grid">
+                    <div class="contact-section__info">
+                        <div class="contact-section__highlight">
+                            <h4 class="contact-section__highlight-title">Venha anunciar conosco!</h4>
+                            <p class="contact-section__highlight-text">Quer levar essa inovação para sua empresa ou cidade? Nossa equipe está pronta para ajudar você a escolher o painel ideal.
+                                Entre em contato direto pelo WhatsApp e tire todas as suas dúvidas.
+                                Será um prazer atendê-lo!</p>
+                            <a class="contact-section__highlight-button" href="https://wa.me/message/KPQWTWMFKOSKL1" target="_blank" rel="noreferrer noopener">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Falar com um especialista</span>
+                            </a>
                         </div>
-                    </fieldset>
-                </form>
+                        
+                        <div class="contact-section__links-section">
+                            <h4 class="contact-section__title">Redes Sociais</h4>
+                            <div class="contact-section__links">
+                                <a class="contact-section__link" href="https://www.instagram.com/condayypublicidade" target="_blank" rel="noreferrer noopener">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                            
+                            <h4 class="contact-section__title">Contato</h4>
+                            <div class="contact-section__links">
+                                <a class="contact-section__link" href="mailto:contato@condayy.com.br">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>contato@condayy.com.br</span>
+                                </a>
+                                <a class="contact-section__link" href="https://wa.me/558588022962" target="_blank" rel="noreferrer noopener">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp Business</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-section__image">
+                        <img src="./assets/imgs/imgs-paineis/IMG_6470.webp" alt="Painel de LED da Condayy Publicidade" class="contact-section__img">
+                        <div class="contact-section__image-overlay">
+                            <h4>Transforme seu espaço em destaque</h4>
+                            <p>Painéis de LED de alta qualidade para sua empresa</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -448,7 +462,6 @@
     
     <script src="https://kit.fontawesome.com/48cd63999d.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="./assets/scripts/validacao.js"></script>
     <script src="./assets/scripts/scroll-top.js"></script>
     <script src="./assets/scripts/carousel.js"></script>
 </body>

@@ -30,6 +30,20 @@
     padding-left: 3%;
 }
 
+.about-contact__nav-title{
+    color: var(--cor-azulescuro-fundo);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-contact__nav-title:first-child{
+    margin-top: 0;
+}
+
 .about-contact__items{
     color: var(--cor-azulescuro-fundo);
     font-size: 1rem;
@@ -45,6 +59,19 @@
     border-radius: 20px;
     padding: 5px;
     transition: 0.4s;
+}
+
+.about-contact__items i{
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.about-contact__items[href*="instagram"] i{
+    color: #E4405F;
+}
+
+.about-contact__items[href*="wa.me"] i{
+    color: #25D366;
 }
 
 .about-contact__inputs{
@@ -100,12 +127,22 @@
         align-items: center;
     }
 
+    .about-contact__nav-title{
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+
+    .about-contact__nav-title:first-child{
+        margin-top: 0;
+    }
+
     .about-contact__items:not(:last-child){
-        margin-bottom: 16%;
+        margin-bottom: 12%;
     }
 
     .about-contact__items{
-        margin-bottom: 16%;
+        margin-bottom: 12%;
+        text-align: center;
     }
 
     .about-contact__inputs{
