@@ -124,15 +124,21 @@ document.addEventListener('DOMContentLoaded', function() {
   function openModal(imageSrc) {
     if (modal && modalImage) {
       modalImage.src = imageSrc;
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      // Pequeno delay para garantir que a imagem seja carregada antes de mostrar o modal
+      setTimeout(() => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }, 50);
     }
   }
   
   function closeModal() {
     if (modal) {
       modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
+      // Aguarda a transição terminar antes de restaurar o overflow
+      setTimeout(() => {
+        document.body.style.overflow = 'auto';
+      }, 300);
     }
   }
   

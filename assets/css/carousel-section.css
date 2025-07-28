@@ -84,6 +84,30 @@
     cursor: pointer; /* Indica que é clicável */
     transition: transform 0.3s ease;
   }
+
+  /* Reduz o tamanho das imagens no desktop */
+  @media (min-width: 769px) {
+    .carousel-track {
+      gap: 15px; /* Reduzido de 20px para 15px */
+    }
+    
+    .carousel-item {
+      flex: 0 0 60%; /* Reduzido de 80% para 60% */
+      max-width: 280px; /* Reduzido de 320px para 280px */
+    }
+  }
+
+  /* Reduz ainda mais em telas muito grandes */
+  @media (min-width: 1200px) {
+    .carousel-track {
+      gap: 20px; /* Reduzido ainda mais para telas grandes */
+    }
+    
+    .carousel-item {
+      flex: 0 0 50%; /* Reduzido para 50% */
+      max-width: 250px; /* Reduzido para 250px */
+    }
+  }
   
   .carousel-item:hover {
     transform: scale(1.02);
@@ -152,17 +176,18 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
   
   .image-modal.active {
-    display: flex;
     opacity: 1;
+    visibility: visible;
   }
   
   .modal-content {
