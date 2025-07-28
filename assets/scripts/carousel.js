@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   let currentIndex = 0;
+  let modalIndex = 0; // Índice separado para o modal
   let startX = 0;
   let currentX = 0;
   let isDragging = false;
@@ -68,12 +69,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (prevBtn) {
       prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
       prevBtn.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+      prevBtn.disabled = currentIndex === 0;
     }
     
     // Desabilita botão próximo se estiver no final
     if (nextBtn) {
       nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
       nextBtn.style.cursor = currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
+      nextBtn.disabled = currentIndex >= maxIndex;
     }
   }
   
@@ -101,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Event listeners para os botões
   prevBtn.addEventListener('click', function(e) {
     e.preventDefault();
+    e.stopPropagation();
     console.log('Botão anterior clicado');
     if (currentIndex > 0) {
       prevSlide();
@@ -109,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   nextBtn.addEventListener('click', function(e) {
     e.preventDefault();
+    e.stopPropagation();
     console.log('Botão próximo clicado');
     const itemWidth = items[0].offsetWidth + 20;
     const trackWidth = track.offsetWidth;
@@ -138,11 +143,14 @@ document.addEventListener('DOMContentLoaded', function() {
       // Aguarda a transição terminar antes de restaurar o overflow
       setTimeout(() => {
         document.body.style.overflow = 'auto';
+        // Atualiza o carrossel principal após fechar o modal
+        updateCarousel();
       }, 300);
     }
   }
   
   function showImageInModal(index) {
+    modalIndex = index; // Usa o índice separado do modal
     const imageSrc = items[index].querySelector('img').src;
     openModal(imageSrc);
   }
@@ -162,19 +170,23 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Navegação no modal
   if (modalPrev) {
-    modalPrev.addEventListener('click', function() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        showImageInModal(currentIndex);
+    modalPrev.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (modalIndex > 0) {
+        modalIndex--;
+        showImageInModal(modalIndex);
       }
     });
   }
   
   if (modalNext) {
-    modalNext.addEventListener('click', function() {
-      if (currentIndex < items.length - 1) {
-        currentIndex++;
-        showImageInModal(currentIndex);
+    modalNext.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (modalIndex < items.length - 1) {
+        modalIndex++;
+        showImageInModal(modalIndex);
       }
     });
   }
@@ -182,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Event listeners para clicar nas imagens
   items.forEach(function(item, index) {
     item.addEventListener('click', function() {
-      currentIndex = index;
+      modalIndex = index; // Define o índice do modal
       showImageInModal(index);
     });
   });

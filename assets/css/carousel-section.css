@@ -161,6 +161,10 @@
     pointer-events: none;
   }
   
+  .nav-btn:not(:disabled) {
+    pointer-events: auto;
+  }
+  
   .nav-btn.prev { 
     left: 20px; /* Posiciona nas laterais do wrapper */
   }
