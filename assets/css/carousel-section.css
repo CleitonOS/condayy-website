@@ -59,6 +59,9 @@
     max-width: 100%;
     overflow: hidden;
     padding: 0 80px; /* Adiciona espaçamento lateral para os botões */
+    /* Melhorias para iOS */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y pinch-zoom;
   }
   
   .carousel-track {
@@ -71,6 +74,11 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    /* Melhorias para iOS */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y pinch-zoom;
+    /* Previne scroll horizontal indesejado */
+    overscroll-behavior-x: contain;
   }
   
   .carousel-item {
@@ -79,10 +87,12 @@
     margin: 0 auto;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     background: white;
     cursor: pointer; /* Indica que é clicável */
     transition: transform 0.3s ease;
+    /* Melhorias para iOS */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   /* Reduz o tamanho das imagens no desktop */
@@ -366,7 +376,12 @@
     .carousel-wrapper {
       overflow-x: hidden;
       padding: 0 60px; /* Reduz o espaçamento para mobile */
-      touch-action: pan-y; /* Permite scroll vertical, mas controla o horizontal */
+      /* Configurações específicas para iOS */
+      touch-action: pan-y pinch-zoom;
+      -webkit-overflow-scrolling: touch;
+      /* Previne conflitos de scroll */
+      overscroll-behavior-x: contain;
+      overscroll-behavior-y: auto;
     }
   
     .carousel-title{
@@ -383,19 +398,40 @@
 
     .carousel-track {
       display: flex;
-      gap: 16px;
+      gap: 0; /* Remove gap no mobile para centralização perfeita */
       padding: 1rem 0rem 4rem 0rem;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      touch-action: pan-y; /* Permite scroll vertical, mas controla o horizontal */
+      /* Configurações específicas para iOS */
+      touch-action: pan-y pinch-zoom;
+      overscroll-behavior-x: contain;
+      overscroll-behavior-y: auto;
+      /* Melhora a performance de scroll */
+      will-change: transform;
+      /* Previne seleção de texto */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
   
     .carousel-item {
-      flex: 0 0 calc(100% - 32px); /* espaço menor que 100% para dar espaçamento entre cards */
+      flex: 0 0 100%; /* Uma imagem por vez no mobile */
+      width: 100%;
+      max-width: 100%;
       scroll-snap-align: center;
-      margin: 0 auto; /* centraliza cada slide */
+      margin: 0; /* Remove margin para centralização perfeita */
       cursor: pointer; /* Indica que é clicável */
       transition: transform 0.3s ease;
+      /* Melhorias específicas para iOS */
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      /* Previne zoom indesejado */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      /* Adiciona espaçamento interno para criar separação visual */
+      padding: 0 15px; /* Espaçamento lateral de 15px em cada lado */
+      box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
     }
     
     .carousel-item:hover {
@@ -407,6 +443,10 @@
       height: auto;
       display: block;
       border-radius: 12px;
+      /* Previne zoom em imagens no iOS */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      pointer-events: none; /* Previne eventos de touch na imagem */
     }
   
     .nav-btn {
@@ -498,3 +538,141 @@
       font-size: 0.9rem;
     }
   }
+
+  @media (max-width: 430px) {
+    .header {
+        padding: 0.8rem 1rem;
+        height: 3.5rem;
+        align-items: center;
+    }
+    
+    .title__header {
+        font-size: 1.4rem;
+    }
+    
+    .mobile-menu-toggle {
+        width: 25px;
+        height: 25px;
+        align-self: center;
+    }
+    
+    .mobile-menu-toggle span {
+        height: 2px;
+        margin: 1.5px 0;
+    }
+    
+    .nav__header {
+        width: 100%;
+        padding-top: 3.5rem;
+    }
+    
+    .links__header {
+        padding: 1.2rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    /* Ajustes específicos para telas muito pequenas */
+    .carousel-item {
+      padding: 0 10px; /* Reduz o espaçamento em telas menores */
+    }
+  }
+
+/* Configurações específicas para dispositivos iOS */
+@supports (-webkit-touch-callout: none) {
+  .carousel-wrapper {
+    /* Melhorias específicas para Safari iOS */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y pinch-zoom;
+    /* Previne zoom indesejado */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    /* Melhora performance de scroll */
+    will-change: transform;
+  }
+  
+  .carousel-track {
+    /* Configurações específicas para iOS */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y pinch-zoom;
+    /* Previne conflitos de scroll */
+    overscroll-behavior-x: contain;
+    overscroll-behavior-y: auto;
+    /* Melhora performance */
+    will-change: transform;
+    /* Previne seleção de texto */
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+  
+  .carousel-item {
+    /* Previne zoom em imagens */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    /* Remove highlight de toque */
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .carousel-item img {
+    /* Previne zoom em imagens no iOS */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+    /* Previne zoom */
+    touch-action: none;
+  }
+  
+  /* Melhora responsividade dos botões no iOS */
+  .nav-btn {
+    /* Aumenta área de toque */
+    min-width: 44px;
+    min-height: 44px;
+    /* Previne zoom */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Melhora modal no iOS */
+  .image-modal {
+    /* Previne scroll do body */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .modal-close,
+  .modal-nav {
+    /* Aumenta área de toque */
+    min-width: 44px;
+    min-height: 44px;
+    /* Previne zoom */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Configurações específicas para iPhone */
+@media screen and (max-width: 430px) and (-webkit-min-device-pixel-ratio: 2) {
+  .carousel-track {
+    /* Ajustes específicos para iPhone */
+    gap: 0; /* Sem gap para centralização perfeita */
+  }
+  
+  .carousel-item {
+    flex: 0 0 100%; /* Uma imagem por vez */
+    width: 100%;
+    padding: 0 8px; /* Espaçamento menor para iPhone */
+  }
+  
+  .nav-btn {
+    width: 44px; /* Área mínima recomendada para iOS */
+    height: 44px;
+    font-size: 1.1rem;
+  }
+  
+  .nav-btn.prev { 
+    left: 8px;
+  }
+  
+  .nav-btn.next { 
+    right: 8px;
+  }
+}
