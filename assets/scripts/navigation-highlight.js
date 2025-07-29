@@ -50,13 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('header-scrolled');
         }
         
-        // Efeito de hide/show baseado na direção do scroll (opcional)
-        if (scrollTop > lastScrollTop && scrollTop > 200) {
-            // Rolando para baixo - esconde header
-            header.classList.add('header-hidden');
-        } else {
-            // Rolando para cima - mostra header
-            header.classList.remove('header-hidden');
+        // Efeito de hide/show baseado na direção do scroll (apenas desktop)
+        if (window.innerWidth > 1023) {
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+                // Rolando para baixo - esconde header
+                header.classList.add('header-hidden');
+            } else {
+                // Rolando para cima - mostra header
+                header.classList.remove('header-hidden');
+            }
         }
         
         lastScrollTop = scrollTop;

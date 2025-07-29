@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 
-    padding-top: 2.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     height: 5rem;
 
     background-color: rgba(249, 249, 249, 0.9);
@@ -155,37 +156,178 @@ text-underline-offset: 4px; */
     }
 }
 
-@media screen and (max-width: 1023px){
+/* Botão do menu mobile */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor-da-marca);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    margin: 2px 0;
+}
+
+/* Animação do hamburger para X */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media screen and (max-width: 1023px) {
+    .header {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
     
-    .links__header:not(#id-link-contato){
+    .nav__header {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: rgba(249, 249, 249, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        padding-top: 5rem;
+    }
+    
+    .nav__header.active {
+        right: 0;
+    }
+    
+    .nav__header ul {
+        flex-direction: column;
+        padding: 2rem 0;
+    }
+    
+    .nav__header li {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .links__header {
+        display: block;
+        width: 100%;
+        padding: 1.5rem 2rem;
+        margin: 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+    
+    .links__header::after {
         display: none;
     }
-
-    /* REMOVER - ANTIGO LINK PARA CONTATO MOBILE */
-    #id-link-contato{
-        font-weight: bold;
-        margin-top: 1rem;
+    
+    .links__header:hover,
+    .links__header:focus {
+        background-color: rgba(255, 97, 0, 0.1);
         color: var(--cor-da-marca);
-        text-decoration: underline;
     }
-
-    #id-link-contato span{
-        padding-right: 2px;
+    
+    .links__header.nav-active {
+        background-color: rgba(255, 97, 0, 0.15);
+        color: var(--cor-da-marca);
+        font-weight: 600;
+        border-left: 4px solid var(--cor-da-marca);
+    }
+    
+    /* Overlay para fechar o menu */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
-@media screen and (max-width: 430px){
-    .header{
+@media screen and (max-width: 768px) {
+    .header {
         padding: 1rem 1.5rem;
-        height: 3rem;
+        height: 4rem;
+        align-items: center;
     }
-
-    .title__header{
-        font-size: 1.8rem;
+    
+    .title__header {
+        font-size: 1.6rem;
     }
+    
+    .nav__header {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .mobile-menu-toggle {
+        align-self: center;
+    }
+}
 
-    #id-link-contato{
+@media screen and (max-width: 430px) {
+    .header {
+        padding: 0.8rem 1rem;
+        height: 3.5rem;
+        align-items: center;
+    }
+    
+    .title__header {
+        font-size: 1.4rem;
+    }
+    
+    .mobile-menu-toggle {
+        width: 25px;
+        height: 25px;
+        align-self: center;
+    }
+    
+    .mobile-menu-toggle span {
+        height: 2px;
+        margin: 1.5px 0;
+    }
+    
+    .nav__header {
+        width: 100%;
+        padding-top: 3.5rem;
+    }
+    
+    .links__header {
+        padding: 1.2rem 1.5rem;
         font-size: 1rem;
-        padding-top: 6px;
     }
 }

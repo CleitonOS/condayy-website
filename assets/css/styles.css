@@ -25,6 +25,19 @@ body{
     padding-top: 8rem;
 }
 
+/* Ajuste do padding para mobile */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 5rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    body {
+        padding-top: 4.5rem;
+    }
+}
+
 h2{
     font-size: 2rem;
     font-weight: 700;
