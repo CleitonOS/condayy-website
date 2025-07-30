@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="assets/css/logo.css">
     <link rel="stylesheet" href="assets/css/carousel-section.css">
     <link rel="stylesheet" href="assets/css/clients-section.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <a name="home"></a>
@@ -85,46 +88,51 @@
         <section id="produtos" class="carousel-modern container">
           <h2 class="carousel-title">Conheça nossos painéis de LED</h2>
           <p class="carousel-description">A melhor forma de comprovar a qualidade de um produto é vê-lo em funcionamento. As imagens a seguir são de painéis da nossa própria rede, instalados em diversas cidades do Ceará como Tamboril, Ipu, Crateús, Ipueiras e Ibiapina. Eles operam sob diferentes condições climáticas, provando sua durabilidade e a performance visual que prometemos.</p>
-          <div class="carousel-wrapper">
-            <button class="nav-btn prev">&#10094;</button>
-        
-            <div class="carousel-track container">
-              <div class="carousel-item">
+          
+          <!-- Swiper -->
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/IMG_4048.webp" alt="Painel 1" />
               </div>
-              <div class="carousel-item">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/IMG_3966.webp" alt="Painel 2" />
               </div>
-              <div class="carousel-item">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/IMG_3970.webp" alt="Painel 3" />
               </div>
-              <div class="carousel-item">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/IMG_4220.webp" alt="Painel 4" />
               </div>
-              <div class="carousel-item">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/IMG_4219.webp" alt="Painel 5" />
               </div>
-              <div class="carousel-item">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/IMG_3948.webp" alt="Painel 6" />
               </div>
-              <div class="carousel-item">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/IMG_4208.webp" alt="Painel 7" />
               </div>
-              <div class="carousel-item">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/IMG_4230.webp" alt="Painel 8" />
               </div>
-              <div class="carousel-item">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/painel-antigo-img-1-comp.webp" alt="Painel 9" />
               </div>
-              <div class="carousel-item">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/painel-antigo-img-2-comp.webp" alt="Painel 10" />
               </div>
-              <div class="carousel-item">
+              <div class="swiper-slide">
                 <img src="./assets/imgs/imgs-paineis/painel-antigo-img-3-comp.webp" alt="Painel 11" />
               </div>
             </div>
-        
-            <button class="nav-btn next">&#10095;</button>
+            
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
           </div>
 
           <div class="carousel-info">
@@ -486,8 +494,11 @@
     <script src="https://kit.fontawesome.com/48cd63999d.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="./assets/scripts/scroll-top.js"></script>
-    <script src="./assets/scripts/carousel.js"></script>
     <script src="./assets/scripts/navigation-highlight.js"></script>
     <script src="./assets/scripts/mobile-menu.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/scripts/swiper-init.js"></script>
 </body>
 </html>
