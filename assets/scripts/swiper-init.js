@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resistance: true,
         resistanceRatio: 0.85,
         
-        // Melhorias para touch
+        // Configuração específica para permitir scroll vertical
         touchStartPreventDefault: false,
         touchMoveStopPropagation: false,
         touchReleaseOnEdges: true,
@@ -84,6 +84,13 @@ document.addEventListener('DOMContentLoaded', function() {
         allowTouchMove: true,
         simulateTouch: true,
         
+        // Configuração específica para scroll vertical
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        
+        // Direção de touch - apenas horizontal
+        touchDirection: 'horizontal',
+        
         // Melhorias para mobile
         watchOverflow: true,
         watchSlidesProgress: true,
@@ -99,6 +106,30 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             slideChange: function() {
                 // Callback quando o slide muda
+            },
+            touchStart: function(swiper, event) {
+                const touch = event.touches[0];
+                swiper.touchStartX = touch.clientX;
+                swiper.touchStartY = touch.clientY;
+            },
+            touchMove: function(swiper, event) {
+                if (swiper.touchStartX && swiper.touchStartY) {
+                    const touch = event.touches[0];
+                    const deltaX = Math.abs(touch.clientX - swiper.touchStartX);
+                    const deltaY = Math.abs(touch.clientY - swiper.touchStartY);
+                    
+                    // Se o movimento for mais vertical que horizontal, desabilita o Swiper
+                    if (deltaY > deltaX && deltaY > 15) {
+                        swiper.allowTouchMove = false;
+                        return;
+                    } else {
+                        swiper.allowTouchMove = true;
+                    }
+                }
+            },
+            touchEnd: function(swiper, event) {
+                // Reabilita o touch move após o gesto
+                swiper.allowTouchMove = true;
             }
         }
     });
