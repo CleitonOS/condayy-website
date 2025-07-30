@@ -29,7 +29,7 @@
     box-sizing: border-box;
     /* Melhorias para touch */
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
+    touch-action: auto;
     will-change: transform;
 }
 
@@ -92,7 +92,7 @@
     user-select: none;
     /* Melhorias para touch */
     -webkit-tap-highlight-color: transparent;
-    touch-action: pan-x;
+    touch-action: auto;
     will-change: transform;
     /* Permite clique no slide */
     pointer-events: auto;
@@ -526,7 +526,7 @@
 @supports (-webkit-touch-callout: none) {
     .swiper-container {
         -webkit-overflow-scrolling: touch;
-        touch-action: pan-x;
+        touch-action: auto;
         /* Melhorias específicas para iOS */
         -webkit-transform: translateZ(0);
         transform: translateZ(0);

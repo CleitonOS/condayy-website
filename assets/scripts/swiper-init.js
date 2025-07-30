@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         longSwipesRatio: 0.5,
         longSwipesMs: 300,
         followFinger: true,
-        threshold: 10,
+        threshold: 20,
         
         // Permite scroll vertical
         allowTouchMove: true,
@@ -99,25 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             slideChange: function() {
                 // Callback quando o slide muda
-            },
-            touchStart: function(swiper, event) {
-                // Permite scroll vertical se o gesto for vertical
-                const touch = event.touches[0];
-                swiper.touchStartX = touch.clientX;
-                swiper.touchStartY = touch.clientY;
-            },
-            touchMove: function(swiper, event) {
-                if (swiper.touchStartX && swiper.touchStartY) {
-                    const touch = event.touches[0];
-                    const deltaX = Math.abs(touch.clientX - swiper.touchStartX);
-                    const deltaY = Math.abs(touch.clientY - swiper.touchStartY);
-                    
-                    // Se o movimento for mais vertical que horizontal, permite scroll da página
-                    if (deltaY > deltaX && deltaY > 10) {
-                        event.stopPropagation();
-                        return;
-                    }
-                }
             }
         }
     });
