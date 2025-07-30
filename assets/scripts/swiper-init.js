@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
         resistanceRatio: 0.85,
         
         // Melhorias para touch
-        touchStartPreventDefault: true,
-        touchMoveStopPropagation: true,
+        touchStartPreventDefault: false,
+        touchMoveStopPropagation: false,
         touchReleaseOnEdges: true,
         touchEventsTarget: 'container',
         
