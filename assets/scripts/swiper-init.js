@@ -66,13 +66,27 @@ document.addEventListener('DOMContentLoaded', function() {
         resistance: true,
         resistanceRatio: 0.85,
         
+        // Melhorias para touch
+        touchStartPreventDefault: true,
+        touchMoveStopPropagation: true,
+        touchReleaseOnEdges: true,
+        touchEventsTarget: 'container',
+        
+        // Sensibilidade do touch
+        shortSwipes: true,
+        longSwipes: true,
+        longSwipesRatio: 0.5,
+        longSwipesMs: 300,
+        followFinger: true,
+        threshold: 10,
+        
         // Melhorias para mobile
         watchOverflow: true,
         watchSlidesProgress: true,
         watchSlidesVisibility: true,
         
         // Prevenção de conflitos
-        preventInteractionOnTransition: true,
+        preventInteractionOnTransition: false,
         
         // Callbacks
         on: {
@@ -101,11 +115,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let currentSlideIndex = 0;
     
-    // Abrir modal ao clicar nas imagens
-    slides.forEach((img, index) => {
-        img.addEventListener('click', () => {
-            currentSlideIndex = index;
-            openModal(index);
+    // Abrir modal ao clicar nos slides
+    const slideElements = document.querySelectorAll('.swiper-slide');
+    slideElements.forEach((slide, index) => {
+        slide.addEventListener('click', (e) => {
+            // Só abre o modal se não foi um swipe
+            if (!swiper.isAnimating) {
+                e.preventDefault();
+                e.stopPropagation();
+                currentSlideIndex = index;
+                openModal(index);
+            }
         });
     });
     
