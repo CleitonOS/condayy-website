@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="assets/css/carousel-section.css">
     <link rel="stylesheet" href="assets/css/clients-section.css">
     
-    <!-- Preload da imagem de contato -->
-    <link rel="preload" href="assets/imgs/imgs-paineis/IMG_4048.webp" as="image" type="image/webp">
+    <!-- Preload da imagem de contato para melhor performance -->
+    <link rel="preload" as="image" href="./assets/imgs/imgs-paineis/painel-antigo-img-1-comp.webp">
     
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -474,7 +474,10 @@
                     </div>
                     
                     <div class="contact-section__image">
-                        <img src="./assets/imgs/imgs-paineis/painel-antigo-img-1-comp.webp" alt="Painel de LED da Condayy Publicidade" class="contact-section__img" loading="lazy" decoding="async">
+                        <img src="./assets/imgs/imgs-paineis/painel-antigo-img-1-comp.webp" alt="Painel de LED da Condayy Publicidade" class="contact-section__img" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--cor-da-marca), #FF6100)'">
+                        <div class="contact-section__watermark">
+                            <span>Condayy</span>
+                        </div>
                         <div class="contact-section__image-overlay">
                             <h4>Painéis de LED de Alta Performance</h4>
                             <p>Soluções completas para sua empresa</p>
