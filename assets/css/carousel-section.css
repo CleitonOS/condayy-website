@@ -31,6 +31,13 @@
     -webkit-overflow-scrolling: touch;
     touch-action: pan-y;
     will-change: transform;
+    /* Melhorias de performance */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
 }
 
 /* Título do carousel */
@@ -96,6 +103,11 @@
     will-change: transform;
     /* Permite clique no slide */
     pointer-events: auto;
+    /* Melhorias de performance */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .swiper-slide:hover {
@@ -113,6 +125,13 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /* Melhorias de performance */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 /* Botões de navegação do Swiper */

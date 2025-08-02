@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Efeitos
         effect: 'slide',
-        speed: 600,
+        speed: 400,
         
         // Touch e gestos
         grabCursor: true,
@@ -66,23 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
         resistance: true,
         resistanceRatio: 0.85,
         
-        // Configuração específica para permitir scroll vertical
-        touchStartPreventDefault: false,
-        touchMoveStopPropagation: false,
-        touchReleaseOnEdges: true,
-        touchEventsTarget: 'container',
-        
-        // Sensibilidade do touch
-        shortSwipes: true,
-        longSwipes: true,
-        longSwipesRatio: 0.5,
-        longSwipesMs: 300,
-        followFinger: true,
-        threshold: 20,
-        
-        // Permite scroll vertical
-        allowTouchMove: true,
-        simulateTouch: true,
+        // Melhorias de performance
+        watchSlidesProgress: false,
+        watchSlidesVisibility: false,
+        preloadImages: false,
+        lazy: true,
         
         // Configuração específica para scroll vertical
         allowSlidePrev: true,
@@ -120,10 +108,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Se o movimento for mais vertical que horizontal, desabilita o Swiper
                     if (deltaY > deltaX && deltaY > 15) {
-                        swiper.allowTouchMove = false;
+                        if (swiper.allowTouchMove !== false) {
+                            swiper.allowTouchMove = false;
+                        }
                         return;
                     } else {
-                        swiper.allowTouchMove = true;
+                        if (swiper.allowTouchMove !== true) {
+                            swiper.allowTouchMove = true;
+                        }
                     }
                 }
             },
