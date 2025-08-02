@@ -1,8 +1,8 @@
 /* Seção de Benefícios e Feedbacks */
 .benefits-feedback__section {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    background: var(--cor-base-escura-2);
     padding-top: 4rem;
-    padding-bottom: 6rem;
+    padding-bottom: 7rem;
     color: #ffffff;
     width: 100%;
 }

@@ -7,7 +7,7 @@
     padding-top: 3rem;
     padding-bottom: 7rem;
 
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    background: var(--cor-base-escura-2);
 }
 
 .about__content {

@@ -7,7 +7,7 @@
     padding-top: 3rem;
     padding-bottom: 7rem;
 
-    background-color: var(--cor-base-escura);
+    background: var(--cor-base-escura-2);
 }
 
 .clients__title {

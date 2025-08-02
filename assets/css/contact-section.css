@@ -455,7 +455,7 @@
     }
     
     .contact-section__subtitle {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .contact-section__info {
@@ -547,10 +547,6 @@
     
     .contact-section__logo {
         font-size: 1.4rem;
-    }
-    
-    .contact-section__subtitle {
-        font-size: 0.85rem;
     }
     
     .contact-section__link {
