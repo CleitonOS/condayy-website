@@ -1,0 +1,224 @@
+/* Seção de Benefícios e Feedbacks */
+.benefits-feedback__section {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    color: #ffffff;
+    width: 100%;
+}
+
+.benefits-feedback__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #FF6100, #FF8C00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.benefits-feedback__description {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #cccccc;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.benefits-feedback__content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* Seção de Benefícios */
+.benefits__title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+.benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.benefit__card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.benefit__card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 97, 0, 0.1);
+    border-color: #FF6100;
+    box-shadow: 0 10px 30px rgba(255, 97, 0, 0.2);
+}
+
+.benefit__icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #FF6100, #FF8C00);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.benefit__name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.benefit__description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+/* Seção de Feedbacks */
+.feedback__title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+.feedback__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.feedback__card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.feedback__card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feedback__stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.feedback__stars i {
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+.feedback__text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+.feedback__author {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.feedback__author strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.feedback__author span {
+    font-size: 0.9rem;
+    color: #FF6100;
+    font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .benefits-feedback__title {
+        font-size: 2rem;
+    }
+    
+    .benefits-feedback__description {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    
+    .benefits__grid,
+    .feedback__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .benefit__card,
+    .feedback__card {
+        padding: 25px;
+    }
+    
+    .benefit__icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .benefit__name {
+        font-size: 1.2rem;
+    }
+    
+    .benefits__title,
+    .feedback__title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits-feedback__section {
+        padding: 60px 0;
+    }
+    
+    .benefits-feedback__content {
+        gap: 60px;
+    }
+    
+    .benefit__card,
+    .feedback__card {
+        padding: 20px;
+    }
+    
+    .benefit__description,
+    .feedback__text {
+        font-size: 0.95rem;
+    }
+} 

@@ -1,6 +1,7 @@
 .contact-section {
     background-color: var(--cor-base-claro);
-    padding: 4rem 0;
+    
+    padding-top: 4rem;
     color: var(--preto-texto);
 }
 
