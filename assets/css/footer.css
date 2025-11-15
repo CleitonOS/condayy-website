@@ -1,6 +1,7 @@
 .main__footer{
     background-color: var(--cor-branca-caixa);
-    padding-top: 2rem;
+    color: var(--preto-texto);
+    padding-top: 3rem;
     padding-bottom: 2rem;
 
     text-align: center;
@@ -9,17 +10,49 @@
 }
 
 .texto-footer{
+    font-size: 0.9rem;
     padding: 5px 0;
     font-variant-numeric: lining-nums;
 }
 
-.texto-footer span{
+.dev-footer span{
     text-decoration: underline;
     text-underline-offset: 2px;
 }
 
 .year-footer{
+    font-size: 0.9rem;
     font-variant-numeric: lining-nums;
+}
+
+.dev-footer{
+    margin-top: 1.2rem;
+    font-size: 0.8rem;
+    font-variant-numeric: lining-nums;
+}
+
+.footer-links {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-link {
+    color: var(--preto-texto);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--cor-da-marca);
+    text-decoration: underline;
+}
+
+.footer-separator {
+    color: #666;
 }
 
 @media screen and (max-width: 430px){
@@ -27,4 +60,17 @@
         font-size: .7rem;
     }
     
+    .footer-links {
+        margin-bottom: 1.5rem;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    
+    .footer-separator {
+        display: none;
+    }
+    
+    .footer-link {
+        font-size: 0.9rem;
+    }
 }
