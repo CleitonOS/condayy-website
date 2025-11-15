@@ -60,6 +60,17 @@
         font-size: .7rem;
     }
     
+    .texto-footer{
+        font-size: 0.8rem;
+        padding: 5px 0;
+        font-variant-numeric: lining-nums;
+    }
+
+    .year-footer{
+        font-size: 0.8rem;
+        font-variant-numeric: lining-nums;
+    }
+
     .footer-links {
         margin-bottom: 1.5rem;
         flex-direction: column;
