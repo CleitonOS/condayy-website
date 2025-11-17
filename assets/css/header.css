@@ -98,7 +98,6 @@
     color: var(--preto-texto);
     position: relative;
     transition: color 0.3s cubic-bezier(.4,0,.2,1);
-    outline: none;
     /* Removido background-color e border-radius do hover para um efeito mais moderno */
 }
 
